@@ -1,9 +1,10 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Guest\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Melisa\Laravel\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+    
     /**
      * Create a new controller instance.
      *
@@ -20,7 +21,7 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {exit(var_dump('entro'));
+    {
         return view('home');
     }
     
