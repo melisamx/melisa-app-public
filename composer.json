@@ -16,9 +16,6 @@
         "symfony/dom-crawler": "3.1.*"
     },
     "autoload": {
-        "classmap": [
-            "database"
-        ],
         "psr-4": {
             "App\\": "App/",
             "Melisa\\": "Melisa/"
@@ -26,7 +23,8 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/TestCase.php"
+            "App/Driver/database",
+            "App/Driver/tests"
         ]
     },
     "scripts": {
