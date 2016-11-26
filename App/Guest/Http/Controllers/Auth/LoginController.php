@@ -23,7 +23,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/panel.php/';
+    protected $redirectTo = '/panel.php/#init';
 
     /**
      * Create a new controller instance.
