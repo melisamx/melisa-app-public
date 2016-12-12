@@ -25,7 +25,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/driver.php/#home';
+    protected $redirectTo = '/panel.php/#home';
 
     /**
      * Create a new controller instance.
