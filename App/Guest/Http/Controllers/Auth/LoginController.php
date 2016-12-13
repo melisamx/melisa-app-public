@@ -42,7 +42,17 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
+        
+        if( melisa('userAgent')->isMobile()) {
+            
+            return view('auth.login', [
+                'mobile'=>'/js/app-mobile.js'
+            ]);
+            
+        }
+        
         return view('auth.login');
+        
     }
     
 }
