@@ -1,11 +1,9 @@
 <?php namespace App\Guest\Database\Seeds;
 
-use Illuminate\Database\Seeder;
-use Melisa\Laravel\Database\InstallEvent;
+use Melisa\Laravel\Database\InstallSeeder;
 
-class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends InstallSeeder
 {
-    use InstallEvent;
     
     public function run()
     {
