@@ -66,3 +66,9 @@
     </div>
 </div>
 @endsection
+
+@section('footer')
+@if (isset($mobile))
+<script src="{{ $mobile }}"></script>
+@endif
+@endsection

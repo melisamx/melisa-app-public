@@ -3,6 +3,11 @@
 use Melisa\Laravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
+/**
+ * 
+ *
+ * @author Luis Josafat Heredia Contreras
+ */
 class ResetPasswordController extends Controller
 {
     /*

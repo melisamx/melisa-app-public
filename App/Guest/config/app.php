@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Mexico_City',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +176,7 @@ return [
         Melisa\Laravel\Providers\AuthServiceProvider::class,
         // Melisa\Laravel\Providers\BroadcastServiceProvider::class,
         Melisa\Laravel\Providers\EventServiceProvider::class,
+        Melisa\Laravel\Providers\HelpersProvider::class,
         App\Guest\Providers\RouteServiceProvider::class,
         
         Melisa\Laravel\Providers\UuidProvider::class,

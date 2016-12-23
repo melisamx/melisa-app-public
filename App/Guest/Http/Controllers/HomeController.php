@@ -2,6 +2,11 @@
 
 use Melisa\Laravel\Http\Controllers\Controller;
 
+/**
+ * 
+ *
+ * @author Luis Josafat Heredia Contreras
+ */
 class HomeController extends Controller
 {
     

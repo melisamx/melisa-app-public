@@ -3,6 +3,11 @@
 use Melisa\Laravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+/**
+ * 
+ *
+ * @author Luis Josafat Heredia Contreras
+ */
 class LoginController extends Controller
 {
     /*
@@ -42,7 +47,17 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
+        
+        if( melisa('userAgent')->isMobile()) {
+            
+            return view('auth.login', [
+                'mobile'=>'/js/app-mobile.js'
+            ]);
+            
+        }
+        
         return view('auth.login');
+        
     }
     
 }
