@@ -3,6 +3,11 @@
 use Melisa\Laravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+/**
+ * 
+ *
+ * @author Luis Josafat Heredia Contreras
+ */
 class LoginController extends Controller
 {
     /*

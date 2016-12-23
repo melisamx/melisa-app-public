@@ -3,6 +3,11 @@
 use Melisa\Laravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
+/**
+ * 
+ *
+ * @author Luis Josafat Heredia Contreras
+ */
 class ForgotPasswordController extends Controller
 {
     
