@@ -10,7 +10,8 @@
         "predis/predis": "~1.0",
         "mobiledetect/mobiledetectlib": "^2.8",
         "tecnickcom/tcpdf": "6.2.12",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "waavi/sanitizer": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
