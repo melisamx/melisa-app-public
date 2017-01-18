@@ -2,6 +2,7 @@
 
 use Melisa\Laravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 /**
  * 
@@ -58,6 +59,37 @@ class LoginController extends Controller
         
         return view('auth.login');
         
+    }
+    
+    /**
+     * Validate the user login request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => 'required|email|min:5|max:90',
+            /**
+             * extract to http://stackoverflow.com/questions/2637896/php-regular-expression-for-strong-password-validation
+             * 
+             * ^                                        # start of line
+                (?=(?:.*[A-Z]){2,})                      # 2 upper case letters
+                (?=(?:.*[a-z]){2,})                      # 2 lower case letters
+                (?=(?:.*\d){2,})                         # 2 digits
+                (?=(?:.*[!@#$%^&*()\-_=+{};:,<.>]){2,})  # 2 special characters
+                (.{8,})                                  # length 8 or more
+                $                                        # EOL
+             */
+            /* is necesary use array */
+            'password'=>[
+                'required',
+                'min:3',
+                'max:30',
+                'regex:/^(?=(?:.*[A-Z]){1,})(?=(?:.*[a-z]){1,})(?=(?:.*[a-z]){1,})(?=(?:.*\d){1,})(?=(?:.*[!@#$%&*()\-_=+{};:,]){1,})(.{3,})$/'
+            ]
+        ]);
     }
     
 }
