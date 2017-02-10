@@ -3,71 +3,84 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+        <form class="col s12 push-m2 m8 push-l4 l4" role="form" method="POST" action="{{ url('/login') }}">
+            
+            {{ csrf_field() }}
+            
+            @include('shared.errors')
+            
+            <div id="remember-avatar" class="row">
+                <div class="valign-wrapper">
+                    <img id="avatar-photo" alt="" class="circle responsive-img avatar">
+                </div>
+                <p id="user-email"></p>
+            </div>
+            
+            <div class="input-field inline col s12 email">
+                <input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
+                @if ($errors->has('email'))
+                <label for="email" data-error="{{ $errors->first('email') }}" data-success="">USUARIO</label>
+                @else
+                <label for="email">USUARIO</label>
+                @endif                
+            </div>
+            
+            <div class="input-field inline col s12">
+                <input id="password" type="password" class="validate" name="password" required>
+                @if ($errors->has('password'))
+                <label for="password" data-error="{{ $errors->first('password') }}">CONTRASEÑA</label>
+                @else
+                <label for="password">CONTRASEÑA</label>
+                @endif
+            </div>
+            
+            <div class="input-field col s12 remember">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Recuérdame</label>
+            </div> 
+            
+            <div class="input-field col s12 center-align">
+                <br><br>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Entrar</button>
+            </div>
+            
+            <div class="input-field col s12 m12 l12 password-reset center-align">
+                <a href="{{ url('/password/reset') }}">
+                    Olvidé la contraseña
+                </a>
+            </div>
+            
+            <div class="input-field col s12 m12 l12 center-align">
+                <a href="{{ url('/register') }}">
+                    Regístrate
+                </a>
+            </div>
+            
+            <div id="change-signin" class="input-field col s12 m12 l12 center-align">
+                <a href="#">
+                    Ingrese con una cuenta diferente
+                </a>
+            </div>
+            
+            <div id="users-login">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Elige una cuenta</span>
+                        <ul id="list-users-login" class="collection scale-transition"></ul>
+                    </div>
+                    <div class="card-action">
+                        <button id="other-account" type="button" class="btn waves-effect waves-light">Con otra cuenta</button>
+                    </div>
                 </div>
             </div>
-        </div>
+            
+        </form>
     </div>
 </div>
 @endsection
 
 @section('footer')
+<script src="js/login-avatars.js"></script>
 @if (isset($mobile))
 <script src="{{ $mobile }}"></script>
 @endif
