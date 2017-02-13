@@ -80,7 +80,7 @@
 @endsection
 
 @section('footer')
-<script src="js/login-avatars.js"></script>
+<script src="js/login-avatars.js?v=1.1.1"></script>
 @if (isset($mobile))
 <script src="{{ $mobile }}"></script>
 @endif

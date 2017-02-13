@@ -12,8 +12,8 @@
 
     <!-- Styles -->
     <link href="/vendor/fontawesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/guest/css/style.css" rel="stylesheet">
-    <link href="/guest/css/app.css" rel="stylesheet">
+    <link href="/guest/css/style.css?v=1.0.0" rel="stylesheet">
+    <link href="/guest/css/app.css?v=1.1.1" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
