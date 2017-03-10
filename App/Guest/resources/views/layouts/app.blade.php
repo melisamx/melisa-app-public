@@ -51,8 +51,6 @@
     </footer>
     <script type="text/javascript" src="vendor/jquery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="vendor/materialize/0.97.7/js/materialize.min.js"></script>
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
     @yield('footer')
 </body>
 </html>

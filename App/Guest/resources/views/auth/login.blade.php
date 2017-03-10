@@ -26,7 +26,7 @@
             </div>
             
             <div class="input-field inline col s12">
-                <input id="password" type="password" class="validate" name="password" required>
+                <input id="password" type="password" class="validate" name="password" required placeholder=" ">
                 @if ($errors->has('password'))
                 <label for="password" data-error="{{ $errors->first('password') }}">CONTRASEÑA</label>
                 @else
