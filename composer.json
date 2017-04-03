@@ -11,7 +11,9 @@
         "mobiledetect/mobiledetectlib": "^2.8",
         "tecnickcom/tcpdf": "6.2.12",
         "guzzlehttp/guzzle": "^6.2",
-        "waavi/sanitizer": "~1.0"
+        "waavi/sanitizer": "~1.0",
+        "intervention/image": "^2.3",
+        "jenssegers/mongodb": "^3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

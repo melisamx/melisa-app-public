@@ -1,7 +1,9 @@
 <?php
 
 Route::get('/', function () {
-    return redirect('login');
+    return view('guest', [
+        'appName'=>config('app.name')
+    ]);
 });
 
 Auth::routes();
