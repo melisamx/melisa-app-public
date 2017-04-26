@@ -5,6 +5,7 @@
                 {{ $appName }}
             </a>
             <ul class="right hide-on-med-and-down">
+                <li><a href="/pens">Pens</a></li>
                 <li><a href="#projects">Arquitectura</a></li>
                 <li><a href="/login">Iniciar sessión</a></li>
             </ul>

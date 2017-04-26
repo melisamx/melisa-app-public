@@ -41,7 +41,7 @@
                 <div class="card-content">
                     <span class="card-title">Tu proyecto</span>
                     <p>
-                        Tenemos espacion para tu proyecto.
+                        Tenemos espacio para tu proyecto.
                     </p>
                 </div>
                 <div class="card-action">

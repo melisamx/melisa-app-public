@@ -10,3 +10,7 @@
         </div>
     </div>
 @endsection
+
+@section('footer')
+@include('partials.google.analytics')
+@endsection
