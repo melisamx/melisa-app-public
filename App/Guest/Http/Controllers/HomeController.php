@@ -1,4 +1,6 @@
-<?php namespace App\Guest\Http\Controllers;
+<?php
+
+namespace App\Guest\Http\Controllers;
 
 use Melisa\Laravel\Http\Controllers\Controller;
 

@@ -1,4 +1,6 @@
-<?php namespace App\Guest\Http\Controllers\Auth;
+<?php
+
+namespace App\Guest\Http\Controllers\Auth;
 
 use App\Core\Models\User;
 use Validator;

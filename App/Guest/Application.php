@@ -1,4 +1,6 @@
-<?php namespace App\Guest;
+<?php
+
+namespace App\Guest;
 
 use Melisa\Laravel\ApplicationBase;
 

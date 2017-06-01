@@ -179,8 +179,7 @@ return [
         Melisa\Laravel\Providers\HelpersProvider::class,
         App\Guest\Providers\RouteServiceProvider::class,
         
-        Melisa\Laravel\Providers\UuidProvider::class,
-
+        Melisa\Laravel\Providers\UuidProvider::class
     ],
 
     /*
@@ -200,6 +199,7 @@ return [
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
+        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,
@@ -228,7 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        
     ],
 
 ];

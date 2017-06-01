@@ -1,4 +1,6 @@
-<?php namespace App\Guest\Http\Controllers\Auth;
+<?php
+
+namespace App\Guest\Http\Controllers\Auth;
 
 use Melisa\Laravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -47,18 +49,14 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function showLoginForm()
-    {
-        
-        if( melisa('userAgent')->isMobile()) {
-            
+    {        
+        if( melisa('userAgent')->isMobile()) {            
             return view('auth.login', [
                 'mobile'=>'/js/app-mobile.js'
-            ]);
-            
+            ]);            
         }
         
-        return view('auth.login');
-        
+        return view('auth.login');        
     }
     
     /**
