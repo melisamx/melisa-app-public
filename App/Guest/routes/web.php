@@ -4,7 +4,7 @@ Route::get('/', function () {
     return view('guest', [
         'appName'=>config('app.name')
     ]);
-});
+})->name('home');
 
 Auth::routes();
 

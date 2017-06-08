@@ -4,11 +4,9 @@
 <div class="container">
     <div class="row">
         <form class="col s12 push-m2 m8 push-l4 l4" role="form" method="POST" action="{{ url('/login') }}">
-            
-            {{ csrf_field() }}
-            
+            {{ csrf_field() }}            
             @include('shared.errors')
-            
+            @include('shared.message')            
             <div id="remember-avatar" class="row">
                 <div class="valign-wrapper">
                     <img id="avatar-photo" alt="" class="circle responsive-img avatar">

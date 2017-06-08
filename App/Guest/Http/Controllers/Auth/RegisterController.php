@@ -2,10 +2,11 @@
 
 namespace App\Guest\Http\Controllers\Auth;
 
-use App\Core\Models\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Validator;
 use Melisa\Laravel\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Core\Models\User;
+use App\Security\Http\Controllers\Auth\PasswordPolice;
 
 /**
  * 
@@ -25,7 +26,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers, PasswordPolice;
 
     /**
      * Where to redirect users after login / registration.
@@ -53,9 +54,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'name'=>'required|max:255',
+            'email'=>'required|email|max:255|unique:users',
+            'password'=>$this->passwordValidation,
         ]);
     }
 
@@ -68,9 +69,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'name'=>$data['name'],
+            'email'=>$data['email'],
+            'password'=>bcrypt($data['password']),
+            'active'=>false
         ]);
     }
     

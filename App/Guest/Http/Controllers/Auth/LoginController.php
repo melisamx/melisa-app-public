@@ -2,9 +2,10 @@
 
 namespace App\Guest\Http\Controllers\Auth;
 
-use Melisa\Laravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Melisa\Laravel\Http\Controllers\Controller;
+use App\Security\Http\Controllers\Auth\PasswordPolice;
 
 /**
  * 
@@ -24,7 +25,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers, PasswordPolice;
 
     /**
      * Where to redirect users after login.
@@ -49,13 +50,12 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function showLoginForm()
-    {        
+    {   
         if( melisa('userAgent')->isMobile()) {            
             return view('auth.login', [
                 'mobile'=>'/js/app-mobile.js'
             ]);            
-        }
-        
+        }        
         return view('auth.login');        
     }
     
@@ -69,24 +69,7 @@ class LoginController extends Controller
     {
         $this->validate($request, [
             $this->username() => 'required|email|min:5|max:90',
-            /**
-             * extract to http://stackoverflow.com/questions/2637896/php-regular-expression-for-strong-password-validation
-             * 
-             * ^                                        # start of line
-                (?=(?:.*[A-Z]){2,})                      # 2 upper case letters
-                (?=(?:.*[a-z]){2,})                      # 2 lower case letters
-                (?=(?:.*\d){2,})                         # 2 digits
-                (?=(?:.*[!@#$%^&*()\-_=+{};:,<.>]){2,})  # 2 special characters
-                (.{8,})                                  # length 8 or more
-                $                                        # EOL
-             */
-            /* is necesary use array */
-            'password'=>[
-                'required',
-                'min:3',
-                'max:30',
-                'regex:/^(?=(?:.*[A-Z]){1,})(?=(?:.*[a-z]){1,})(?=(?:.*[a-z]){1,})(?=(?:.*\d){1,})(?=(?:.*[!@#$%&*()\-_=+{};:,]){1,})(.{3,})$/'
-            ]
+            'password'=>$this->passwordValidation
         ]);
     }
     
