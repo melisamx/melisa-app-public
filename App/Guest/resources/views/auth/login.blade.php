@@ -24,12 +24,8 @@
             </div>
             
             <div class="input-field inline col s12">
-                <input id="password" type="password" class="validate" name="password" required placeholder=" ">
-                @if ($errors->has('password'))
-                <label for="password" data-error="{{ $errors->first('password') }}">CONTRASEÑA</label>
-                @else
-                <label for="password">CONTRASEÑA</label>
-                @endif
+                <input id="password" type="password" class="validate" name="password" required placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                <label for="password" data-error="{{ $errors->has('password') ? $errors->first('password') : 'La contraseña debe contener al menos 6 caracteres, incluyendo números MAYÚSCULAS y minúsculas' }}">CONTRASEÑA</label>
             </div>
             
             <div class="input-field col s12 remember">

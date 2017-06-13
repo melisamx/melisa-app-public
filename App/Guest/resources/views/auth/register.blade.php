@@ -28,15 +28,15 @@
 
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
-                            <input id="password" type="password" class="validate {{ $errors->has('password') ? 'invalid' : '' }}" name="password" required>
-                            <label for="password" data-error="{{ $errors->has('password') ? $errors->first('password') : 'Contraseña invalida' }}">Contraseña</label>
+                            <input id="password" type="password" class="validate {{ $errors->has('password') ? 'invalid' : '' }}" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="La contraseña debe contener al menos 6 caracteres, incluyendo números MAYÚSCULAS y minúsculas">
+                            <label for="password" data-error="{{ $errors->has('password') ? $errors->first('password') : 'La contraseña debe contener al menos 8 caracteres, incluyendo números MAYÚSCULAS y minúsculas' }}">Contraseña</label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
-                            <input id="password-confirm" type="password" class="validate" name="password_confirmation" required>
-                            <label for="password-confirm">Confirmar contraseña</label>
+                            <input id="password-confirm" type="password" class="validate" name="password_confirmation" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="La contraseña debe contener al menos 6 caracteres, incluyendo números MAYÚSCULAS y minúsculas">
+                            <label for="password-confirm" data-error="{{ $errors->has('password') ? $errors->first('password') : 'La contraseña debe contener al menos 8 caracteres, incluyendo números MAYÚSCULAS y minúsculas' }}">Confirmar contraseña</label>
                         </div>
                     </div>
                     
