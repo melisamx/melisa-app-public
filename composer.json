@@ -14,7 +14,8 @@
         "waavi/sanitizer": "~1.0",
         "intervention/image": "^2.3",
         "jenssegers/mongodb": "^3.2",
-        "doctrine/dbal": "^2.5"
+        "doctrine/dbal": "^2.5",
+        "maatwebsite/excel": "~2.1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
