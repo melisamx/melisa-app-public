@@ -36,7 +36,8 @@ module.exports = function(grunt) {
         clean: {
             logfiles: [
                 '<%= pkg.appsPaths %>/**/storage/logs/*.log',
-                '<%= pkg.appsPaths %>/**/storage/framework/views/*.php'
+                '<%= pkg.appsPaths %>/**/storage/framework/views/*.php',
+                '<%= pkg.appsPaths %>/**/bootstrap/cache/*.php'
             ]
         },
         shell: {
