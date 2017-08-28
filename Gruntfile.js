@@ -56,6 +56,36 @@ module.exports = function(grunt) {
                     'php panel seeders'
                 ].join('&&')
             },
+            migrate: {
+                command: [
+                    'grunt clean',
+                    'php core migrate',
+                    'php sencha',
+                    'php events',
+                    'php artisan',
+                    'php forge migrate --database=forge',
+                    'php panel',
+                    'php security',
+                    'php people migrate --database=people',
+                    'php drive migrate --database=drive',
+                    'php panel migrate --database=panel'
+                ].join('&&')
+            },
+            migrateReset: {
+                command: [
+                    'grunt clean',
+                    'php core migrate:reset',
+                    'php sencha',
+                    'php events',
+                    'php artisan',
+                    'php forge migrate:reset --database=forge',
+                    'php panel',
+                    'php security',
+                    'php people migrate:reset --database=people',
+                    'php drive migrate:reset --database=drive',
+                    'php panel migrate:reset --database=panel'
+                ].join('&&')
+            },
             writingFolders: {
                 command: [
                     'chmod -R 777 App/Core/storage',
@@ -87,6 +117,14 @@ module.exports = function(grunt) {
     
     grunt.registerTask('install', [
         'shell:installBasic'
+    ]);
+    
+    grunt.registerTask('mr', [
+        'shell:migrateReset'
+    ]);
+    
+    grunt.registerTask('m', [
+        'shell:migrate'
     ]);
     
     grunt.registerTask('writing', [
