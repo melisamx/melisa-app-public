@@ -60,30 +60,18 @@ module.exports = function(grunt) {
                 command: [
                     'grunt clean',
                     'php core migrate',
-                    'php sencha',
-                    'php events',
-                    'php artisan',
                     'php forge migrate --database=forge',
-                    'php panel',
-                    'php security',
                     'php people migrate --database=people',
-                    'php drive migrate --database=drive',
-                    'php panel migrate --database=panel'
+                    'php drive migrate --database=drive'
                 ].join('&&')
             },
             migrateReset: {
                 command: [
                     'grunt clean',
                     'php core migrate:reset',
-                    'php sencha',
-                    'php events',
-                    'php artisan',
                     'php forge migrate:reset --database=forge',
-                    'php panel',
-                    'php security',
                     'php people migrate:reset --database=people',
-                    'php drive migrate:reset --database=drive',
-                    'php panel migrate:reset --database=panel'
+                    'php drive migrate:reset --database=drive'
                 ].join('&&')
             },
             writingFolders: {
@@ -105,7 +93,7 @@ module.exports = function(grunt) {
                     'chmod -R 777 App/Drive/storage',
                     'chmod -R 777 App/Drive/bootstrap',
                     'chmod -R 777 App/Panel/storage',
-                    'chmod -R 777 App/Panel/bootstrap',
+                    'chmod -R 777 App/Panel/bootstrap'
                 ].join('&&')
             }
         }
