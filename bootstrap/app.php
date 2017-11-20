@@ -11,15 +11,9 @@
 |
 */
 
-include __DIR__ . '/../App/Guest/Application.php';
+use App\Guest\Application;
 
-$app = new App\Guest\Application(
-    [
-        'base'=>  realpath(__DIR__ . '/../App/Guest'),
-        'storage'=> realpath(__DIR__ . '/../App/Guest/storage'),
-        'storageSession'=>realpath(__DIR__ . '/../storage/framework/sessions'),
-    ]
-);
+$app = new App\Guest\Application(realpath(__DIR__ . '/../App/Guest'));
 
 /*
 |--------------------------------------------------------------------------
