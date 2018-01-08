@@ -1,5 +1,12 @@
 module.exports = function(grunt) {
     
+    var config = {
+        writingConfig: require('./config/writingFolders'),
+        migrate: require('./config/migrate'),
+        migrateReset: require('./config/migrateReset'),
+        installBasic: require('./config/installBasic')
+    };
+    
     grunt.initConfig({
         pkg: {
             appsPaths: 'App',
@@ -41,61 +48,10 @@ module.exports = function(grunt) {
             ]
         },
         shell: {
-            installBasic: {
-                command: [
-                    'grunt clean',
-                    'php core seeders',
-                    'php sencha seeders',
-                    'php events seeders',
-                    'php artisan seeders',
-                    'php forge seeders',
-                    'php panel seeders',
-                    'php security seeders',
-                    'php people seeders',
-                    'php drive seeders',
-                    'php panel seeders'
-                ].join('&&')
-            },
-            migrate: {
-                command: [
-                    'grunt clean',
-                    'php core migrate',
-                    'php forge migrate --database=forge',
-                    'php people migrate --database=people',
-                    'php drive migrate --database=drive'
-                ].join('&&')
-            },
-            migrateReset: {
-                command: [
-                    'grunt clean',
-                    'php core migrate:reset',
-                    'php forge migrate:reset --database=forge',
-                    'php people migrate:reset --database=people',
-                    'php drive migrate:reset --database=drive'
-                ].join('&&')
-            },
-            writingFolders: {
-                command: [
-                    'chmod -R 777 App/Core/storage',
-                    'chmod -R 777 App/Core/bootstrap',
-                    'chmod -R 777 App/Sencha/storage',
-                    'chmod -R 777 App/Sencha/bootstrap',
-                    'chmod -R 777 App/Events/storage',
-                    'chmod -R 777 App/Events/bootstrap',
-                    'chmod -R 777 App/Guest/storage',
-                    'chmod -R 777 App/Guest/bootstrap',
-                    'chmod -R 777 App/Forge/storage',
-                    'chmod -R 777 App/Forge/bootstrap',
-                    'chmod -R 777 App/Panel/storage',
-                    'chmod -R 777 App/Panel/bootstrap',
-                    'chmod -R 777 App/People/storage',
-                    'chmod -R 777 App/People/bootstrap',
-                    'chmod -R 777 App/Drive/storage',
-                    'chmod -R 777 App/Drive/bootstrap',
-                    'chmod -R 777 App/Panel/storage',
-                    'chmod -R 777 App/Panel/bootstrap'
-                ].join('&&')
-            }
+            installBasic: config.installBasic,
+            migrate: config.migrate,
+            migrateReset: config.migrateReset,
+            writingFolders: config.writingFolders
         }
     });
     
