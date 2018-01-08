@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
     
     var config = {
-        writingConfig: require('./config/writingFolders'),
+        writingFolders: require('./config/writingFolders'),
         migrate: require('./config/migrate'),
         migrateReset: require('./config/migrateReset'),
         installBasic: require('./config/installBasic')
