@@ -17,6 +17,9 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} ^(.+)$
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    RewriteCond %{HTTP:client_id} .
+    RewriteRule .* - [E=HTTP_CLIENT_ID:%{HTTP:client_id}]
 </IfModule>
 
 <ifModule mod_expires.c>
