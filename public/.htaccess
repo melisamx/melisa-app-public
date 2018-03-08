@@ -59,3 +59,9 @@
     ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType text/javascript "access plus 1 month"
 </ifModule>
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Headers: "access-control-allow-headers, access-control-allow-methods, access-control-allow-origin, authorization, client_id, client_secret, content-type"
+    Header set Access-Control-Allow-Methods: "PUT, DELETE, GET, POST"
+</IfModule>
