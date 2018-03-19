@@ -18,5 +18,5 @@ module.exports = {
         'chmod -R 777 App/Drive/bootstrap',
         'chmod -R 777 App/Panel/storage',
         'chmod -R 777 App/Panel/bootstrap'
-    ].join('&&')
+    ].join(' && ')
 };

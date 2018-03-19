@@ -1,11 +1,46 @@
 module.exports = function(grunt) {
     
-    var config = {
-        writingFolders: require('./config/writingFolders'),
-        migrate: require('./config/migrate'),
-        migrateReset: require('./config/migrateReset'),
-        installBasic: require('./config/installBasic')
-    };
+    var fs = require('fs'),
+        extraFiles = {
+            writingFolders: './config/writingFoldersExtras.js',
+            installBasic: './config/installBasicExtras.js',
+            migrate: './config/migrateExtras.js',
+            migrateReset: './config/migrateResetExtras.js'
+        },
+        config = {
+            writingFolders: require('./config/writingFolders'),
+            migrate: require('./config/migrate'),
+            migrateReset: require('./config/migrateReset'),
+            installBasic: require('./config/installBasic')
+        };
+    
+    if (fs.existsSync(extraFiles.writingFolders)) {
+        config.writingFolders.command = [
+            config.writingFolders.command,
+            require(extraFiles.writingFolders)
+        ].join(' && ');
+    }
+    
+    if (fs.existsSync(extraFiles.installBasic)) {
+        config.installBasic.command = [
+            config.installBasic.command,
+            require(extraFiles.installBasic)
+        ].join(' && ');
+    }
+    
+    if (fs.existsSync(extraFiles.migrate)) {
+        config.migrate.command = [
+            config.migrate.command,
+            require(extraFiles.migrate)
+        ].join(' && ');
+    }
+    
+    if (fs.existsSync(extraFiles.migrateReset)) {
+        config.migrateReset.command = [
+            config.migrateReset.command,
+            require(extraFiles.migrateReset)
+        ].join(' && ');
+    }
     
     grunt.initConfig({
         pkg: {
