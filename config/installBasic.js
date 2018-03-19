@@ -11,5 +11,5 @@ module.exports = {
         'php people seeders',
         'php drive seeders',
         'php panel seeders'
-    ].join('&&')
+    ].join(' && ')
 };

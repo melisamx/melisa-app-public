@@ -5,5 +5,5 @@ module.exports = {
         'php forge migrate --database=forge',
         'php people migrate --database=people',
         'php drive migrate --database=drive'
-    ].join('&&')
+    ].join(' && ')
 };
